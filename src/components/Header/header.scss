@@ -1,0 +1,11 @@
+@import "../../css/helpers/variables";
+
+.header{
+    .navbar-light{
+        .navbar-brand{
+            color: $blue;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+}

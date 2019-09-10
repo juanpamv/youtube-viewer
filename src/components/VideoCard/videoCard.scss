@@ -1,0 +1,19 @@
+@import "../../css/helpers/variables";
+
+.video-card{
+
+    .card{
+        border-radius: 0;
+        border: 2px $blue solid;
+        margin-bottom: 20px;
+    }
+
+    &__button{
+        background-color: transparent;
+        border-radius: 0;
+        border: 2px solid $blue;
+        color: $blue;
+        display: block;
+        width: 100%;
+    }
+}

@@ -1,0 +1,51 @@
+// ========================= //
+//           FONTS           //
+// ========================= //
+// Used for calculating REM units from Pixels
+$fontBase: 16px;
+
+// Font Family
+$font-family-Roboto: 'Roboto', sans-serif;
+
+// This will attach in memory all the font variables,
+// in this way we can have better performance on loading times.
+:root {
+    --font-family-Roboto: #{inspect($font-family-Roboto)};
+}
+
+// ========================= //
+//          COLORS           //
+// ========================= //
+$black: #000000;
+$white: #FFFFFF;
+$green: #a7e0d6;
+$blue: #183a5b;
+$yellow: #fff200;
+
+// This will attach in memory all the color variables,
+// in this way we can have better performance on loading times.
+$colors: () !default;
+$colors: map-merge( 
+    ( 
+        "black": $black,
+        "white": $white,
+        "green": $green,
+        "blue": $blue,
+        "yellow": $yellow,
+    ), 
+$colors);
+
+:export {
+    black: #000000;
+    white: #FFFFFF;
+    green: #a7e0d6;
+    blue: #183a5b;
+    yellow: #fff200;
+}
+
+// Bootstrap Variables
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;

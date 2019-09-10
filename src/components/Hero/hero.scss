@@ -1,0 +1,47 @@
+@import "../../css/helpers/variables";
+
+.hero{
+    background-color: $green;
+
+    &__content{
+        align-items: center;
+        color: $blue;
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+        justify-content: center;
+    }
+
+    &__title{
+        font-size: 3.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+
+        @media screen and (min-width: $md){
+            font-size: 4.5rem;
+        }
+    }
+
+    &__sub-title{
+        font-weight: 300;
+        margin-bottom: 20px;
+
+        @media screen and (min-width: $md){
+            font-size: 2rem;
+        }
+    }
+
+    & .hero__button{
+        border: $blue 3px solid;
+        color: $blue;
+        background-color: transparent;
+        border-radius: 0px;
+
+        &:hover{
+            background-color: $blue;
+            border: $blue 3px solid;
+            color: $yellow;
+        }
+    }
+}
