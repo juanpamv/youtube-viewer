@@ -5,8 +5,15 @@ import VideoPlayer from '../components/VideoPlayer/VideoPlayer';
 import Comment from '../components/Comment/Comment';
 import Statistics from "../components/Statistics/Statistics";
 
+// This key totally not should be here, should be moved to a .env file and handled from there
+// this was commited just for excercise testing
 const API_KEY = 'AIzaSyD7vaPIWMA_inrh-GARM_Qv8k0HyqtyRuE';
 
+/**
+ * Container for video page
+ * Fetch video data from Youtube API
+ *
+ */
 class Video extends React.Component{
     state = {
         loading: false,
@@ -14,12 +21,23 @@ class Video extends React.Component{
         comments: []
     }
 
+    /**
+     * mount video and comments data to state
+     * fetch data from Youtube API
+     */
     componentDidMount = () => {
+        // video ID data taken from url paramether
         const videoID = this.props.match.params.videoId;
         this.getVideoData(videoID);
         this.getComments(videoID);
     }
 
+    /**
+     * Fetch video data from Youtube API
+     * 
+     * video identifier
+     * @param {string} videoId 
+     */
     getVideoData = async (videoId) => {
         await fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics%2C%20snippet%2C%20player&fields=items(player(embedHtml)%2Cid%2C%20snippet(title%2C%20description%2C%20thumbnails(medium))%2C%20statistics(dislikeCount%2C%20likeCount%2C%20viewCount))&id=${videoId}&maxResults=10&key=${API_KEY}`, {
             headers: {
@@ -36,6 +54,12 @@ class Video extends React.Component{
         })
     }
 
+     /**
+     * Fetch comments data from Youtube API
+     * 
+     * video identifier
+     * @param {string} videoId 
+     */
     getComments = async (videoId) => {
         await fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults=20&order=time&videoId=${videoId}&key=${API_KEY}`, {
             headers: {
@@ -46,7 +70,6 @@ class Video extends React.Component{
             credentials: "include",
         }).then(res => res.json())
         .then(res => {
-            console.log(res.items)
             this.setState({
                 loading: true,
                 comments: res.items
