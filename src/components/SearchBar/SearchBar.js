@@ -28,7 +28,7 @@ class SearchBar extends React.Component {
 
         //Add new API call
         this.APICall = setTimeout(() => {
-            //this.props.getVideos(this.state.value);
+            this.props.getVideos(this.state.value);
         }, 300);
     }
     
