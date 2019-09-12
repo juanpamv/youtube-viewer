@@ -5,7 +5,7 @@ import VideoGrid from '../components/VideoGrid/VideoGrid';
 
 // This key totally not should be here, should be moved to a .env file and handled from there
 // this was commited just for excercise testing
-const API_KEY = 'AIzaSyD7vaPIWMA_inrh-GARM_Qv8k0HyqtyRuE';
+const API_KEY = '';
 
 /**
  * Container for video data in Home Page
