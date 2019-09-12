@@ -1,29 +1,37 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { 
     Col,
     Card, 
     CardImg, 
     CardText, 
     CardBody,
-    CardTitle, 
-    CardSubtitle, 
-    Button } from 'reactstrap';
+    CardTitle } from 'reactstrap';
+import { Link } from "react-router-dom";
 import './videoCard.scss';
 
+/**
+ * Renders video information in a boostrap card component
+ */
 const VideoCard = (props) => {
+  const video = props.video;
   return (
     <Col xs={12} md={6} lg={4} className="video-card">
       <Card>
-        <CardImg top width="100%" src="https://picsum.photos/200/100" alt="Card image cap" />
+        <CardImg top width="100%" src={video.snippet.thumbnails.medium.url} alt="Card image cap" />
         <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button className="video-card__button">Button</Button>
+          <CardTitle>{video.snippet.title}</CardTitle>
+          <CardText>{video.snippet.description.slice(0, 50)+"..."}</CardText>
+          <Link className="video-card__button w-100 btn btn-secondary" to={`/video/${video.id.videoId}`}>View Video</Link>
         </CardBody>
       </Card>
     </Col>
   );
+};
+
+VideoCard.propTypes = {
+  /** video object comming from API, Data: snippet(title, description,thumbnails), id */
+  video: PropTypes.object.isRequired,
 };
 
 export default VideoCard;

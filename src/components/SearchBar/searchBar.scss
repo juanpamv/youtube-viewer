@@ -1,0 +1,34 @@
+@import "../../css/helpers/variables";
+
+.search-bar{
+    background-color: $yellow;
+    color: $blue;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    & .search-bar__input{
+        background-color: transparent;
+        border-radius: 0px;
+        border: solid 3px $blue;
+        color: $blue;
+        padding: 1.2rem .75rem;
+
+        &:focus, &:active{
+            background-color: transparent;
+            color: $blue;
+        }
+    }
+
+    & .search-bar__button{
+        border: $blue 3px solid;
+        color: $blue;
+        background-color: transparent;
+        border-radius: 0px;
+
+        &:hover{
+            background-color: $blue;
+            border: $blue 3px solid;
+            color: $yellow;
+        }
+    }
+}

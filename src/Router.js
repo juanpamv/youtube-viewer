@@ -3,7 +3,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Video from "./pages/Video";
 import NotFound from "./pages/NotFound";
-
+/**
+ * Handles routes for diferent pages
+ */
 const Router = () => (
     <BrowserRouter>
       <Switch>

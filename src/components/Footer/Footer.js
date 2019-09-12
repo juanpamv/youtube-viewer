@@ -7,8 +7,8 @@ const Footer = () => {
     return <footer className="footer">
             <Container fluid>
                 <Row>
-                    <Col>
-                        <h3>This is the Header</h3>
+                    <Col className="text-center">
+                        <p>2019 CD PLAYER a Creative Drive Player. All Rights reserved.</p>
                     </Col>
                 </Row>
             </Container>

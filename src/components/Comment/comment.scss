@@ -1,0 +1,28 @@
+@import "../../css/helpers/variables",
+"../../css/helpers/mixins";
+
+.list-group-item.comment{
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding: 20px 15px;
+
+    .media-left{
+        margin-right: 20px;
+    }
+
+    & .comment__img{
+        border-radius: 20px;
+        height: 40px;
+        width: 40px;
+    }
+
+    & .comment__name{
+        
+    }
+
+    & .comment__text{
+        @include fontSize(15px);
+        line-height: 18px;
+    }
+}

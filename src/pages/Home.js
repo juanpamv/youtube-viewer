@@ -1,13 +1,13 @@
 import React from "react";
 import Hero from '../components/Hero/Hero';
-import VideoGrid from '../components/VideoGrid/VideoGrid';
+import VideoContainer  from '../components/VideoContainer';
 
 class Home extends React.Component{
     render(){
         return(
             <React.Fragment>
                 <Hero title={"CD Player"} subTitle={"Creative Drive Player"}/>
-                <VideoGrid />
+                <VideoContainer />
             </React.Fragment>
         )
     }

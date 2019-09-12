@@ -8,12 +8,24 @@
         margin-bottom: 20px;
     }
 
-    &__button{
-        background-color: transparent;
-        border-radius: 0;
-        border: 2px solid $blue;
+    & .video-card__button{
+        border: $blue 3px solid;
         color: $blue;
-        display: block;
-        width: 100%;
+        background-color: transparent;
+        border-radius: 0px;
+
+        &:hover{
+            background-color: $blue;
+            border: $blue 3px solid;
+            color: $yellow;
+        }
+    }
+
+    .card-title{
+        font-weight: 700;
+    }
+
+    .card-text{
+        margin-bottom: .75rem;
     }
 }

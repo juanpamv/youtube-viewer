@@ -1,0 +1,27 @@
+@import "../../css/helpers/variables";
+
+.video-player{
+    background-color: $yellow;
+    padding-top: 100px;
+
+    & .video-player__title{
+        margin-bottom: 20px;
+    }
+
+    & .video-player__description{
+        margin-bottom: 20px;
+    }
+
+    iframe{
+        width: 100%;
+        margin-bottom: 20px;
+
+        @media screen and (min-width: $md){
+            min-height: 400px;
+        }
+
+        @media screen and (min-width: $lg){
+            min-height: 500px;
+        }
+    }
+}

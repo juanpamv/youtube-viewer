@@ -17,9 +17,13 @@ h1 {
 h2 {
     @include fontSize(24px);
     font-family: $font-family-Roboto;
-    font-weight: 700;
+    font-weight: 300;
     line-height: 28px;
-    margin-bottom: 4px;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $md){
+        font-size: 2rem;
+    }
 }
 
 h3 {
